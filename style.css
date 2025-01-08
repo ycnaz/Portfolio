@@ -1,0 +1,206 @@
+:root {
+    --bg-primary: hsl(0, 0%, 5%);
+    --accent: hsl(269, 100%, 50%);
+    --white: white;
+}
+
+/* @media (prefers-color-scheme: light) {
+    :root {
+
+    }
+} */
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    color-scheme: dark light;
+    overflow-x: hidden;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--bg-primary);
+    font-family: "Orbitron", serif;
+}
+
+.logo {
+    font-family: "Orbitron", serif;
+    color: var(--white);
+    margin: 0;
+}
+
+header {
+    height: 50px;
+}
+
+nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    column-gap: 2rem;
+}
+
+.nav-links-wrapper li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    font-family: "Consolas", monospace;
+    color: var(--white);
+}
+
+.nav-links::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links:hover::after {
+    width: 100%;
+}
+
+.nav-links:focus {
+    outline: none;
+}
+
+.nav-links:focus::after {
+    width: 100%;
+}
+
+.light-icon {
+    /* display: none; */
+    width: 20px;
+    height: 20px;
+}
+
+.dark-icon {
+    display: none;
+    width: 20px;
+    height: 20px;
+}
+
+.theme-toggler {
+    outline: none;
+    border: none;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.hero {
+    height: calc(100vh - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-sub-con {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-sub-text {
+    font-size: 3rem;
+}
+
+.hero-sub-text-bg {
+    position: relative;
+}
+
+.hero-sub-text-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--accent);
+    transform: rotate(-4deg);
+    z-index: -1;
+}
+
+.hero strong {
+    font-size: 7rem;
+    line-height: 6rem;
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+.hand-wave {
+    cursor: default;
+    display: inline-block;
+    transform-origin: 50% 100%;
+}
+
+.hand-wave:hover {
+    animation: wave 1s ease-in-out infinite;
+}
+
+#projects {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#projects h1 {
+    font-size: 4rem;
+}
+
+.projects-con {
+    display: flex;
+    width: max-content;
+}
+
+.project {
+    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project div img {
+    width: calc(100vw - 20%);
+    height: auto;
+    object-fit: contain;
+}
