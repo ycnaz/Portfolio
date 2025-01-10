@@ -1,7 +1,8 @@
 :root {
     --bg-primary: hsl(0, 0%, 5%);
     --accent: hsl(269, 100%, 50%);
-    --white: white;
+    --white: hsl(0, 0%, 100%);
+    --overlay: hsla(0, 0%, 0%, 0.5);
 }
 
 /* @media (prefers-color-scheme: light) {
@@ -35,6 +36,8 @@ body {
     font-family: "Orbitron", serif;
     color: var(--white);
     margin: 0;
+    user-select: none;
+    cursor: pointer;
 }
 
 header {
@@ -65,6 +68,7 @@ nav ul {
     color: inherit;
     font-family: "Consolas", monospace;
     color: var(--white);
+    user-select: none;
 }
 
 .nav-links::after {
@@ -126,6 +130,7 @@ nav ul {
 .hero-sub-con {
     display: flex;
     flex-direction: column;
+    user-select: none;
 }
 
 .hero-sub-text {
@@ -144,8 +149,9 @@ nav ul {
     height: 100%;
     width: 100%;
     background-color: var(--accent);
-    transform: rotate(-4deg);
+    transform: rotate(-2deg);
     z-index: -1;
+    border-radius: 10px;
 }
 
 .hero strong {
@@ -178,12 +184,15 @@ nav ul {
 }
 
 #projects {
+    position: relative;
     height: 100vh;
     overflow: hidden;
 }
 
 #projects h1 {
     font-size: 4rem;
+    position: absolute;
+    margin-left: 1rem;
 }
 
 .projects-con {
@@ -197,10 +206,64 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-.project div img {
-    width: calc(100vw - 20%);
+.project-img-con {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.project-img-con-inner {
+    width: calc(100vw - 40%);
     height: auto;
     object-fit: contain;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.project-img-con-inner::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-img-con-inner:hover::after {
+    opacity: 1;
+}
+
+.project-info-links {
+    position: absolute;
+    bottom: 1rem;
+    right: -15rem;
+    z-index: 1;
+    transition: right 0.3s ease;
+    transition-delay: 0s;
+    display: flex;
+    column-gap: 1rem;
+}
+
+.info-svg {
+    width: 5rem;
+    height: 5rem;
+}
+
+.project-img-con-inner:hover .project-info-links {
+    right: 1rem;
+    transition-delay: 0.3s;
 }
