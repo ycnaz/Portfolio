@@ -3,6 +3,8 @@
     --accent: hsl(269, 100%, 50%);
     --white: hsl(0, 0%, 100%);
     --overlay: hsla(0, 0%, 0%, 0.5);
+    --section-font-size: 4rem;
+    --border-radius: 20px;
 }
 
 /* @media (prefers-color-scheme: light) {
@@ -90,7 +92,7 @@ nav ul {
     outline: none;
 }
 
-.nav-links:focus::after {
+.nav-links:focus-visible::after {
     width: 100%;
 }
 
@@ -190,7 +192,7 @@ nav ul {
 }
 
 #projects h1 {
-    font-size: 4rem;
+    font-size: var(--section-font-size);
     position: absolute;
     margin-left: 1rem;
 }
@@ -227,6 +229,7 @@ nav ul {
     width: 100%;
     height: auto;
     object-fit: contain;
+    border-radius: var(--border-radius);
 }
 
 .project-img-con-inner::after {
@@ -266,4 +269,95 @@ nav ul {
 .project-img-con-inner:hover .project-info-links {
     right: 1rem;
     transition-delay: 0.3s;
+}
+
+.project-info-stacks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: sans-serif;
+    display: flex;
+    column-gap: 2rem;
+}
+
+.project-info-each-stack {
+    padding: 4px 1rem;
+    font-size: 1rem;
+    background-color: rgba(var(--accent), 0.8);
+    border-radius: 40px;
+}
+
+#tech-stack {
+    display: flex;
+    min-height: 200vh;
+    user-select: none;
+}
+
+.left-panel {
+    position: sticky;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.tech-header-con {
+    width: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-header {
+    font-size: var(--section-font-size);
+    min-width: max-content;
+    /* background-color: var(--accent); */
+    /* border-radius: var(--border-radius); */
+    /* padding: 1rem 2rem; */
+}
+
+.right-panel {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10rem;
+    padding-top: 23rem;
+}
+
+/* .right-panel > :last-child {
+    row-gap: 4rem;
+} */
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tech-item span {
+    font-size: var(--section-font-size);
+}
+
+.tech-item i {
+    font-size: 15rem;
+}
+
+.tech-item svg {
+    scale: 1.7;
+}
+
+#contact {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-con {
+    background-color: var(--accent);
+    border-radius: var(--border-radius);
+    width: 80%;
+    height: 80%;
 }

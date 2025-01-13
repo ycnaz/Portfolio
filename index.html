@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/686627c0a8.js" crossorigin="anonymous"></script>
+
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     
     <!-- Orbitron font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +34,7 @@
             <ul class="nav-links-wrapper">
                 <li><a class="nav-links" href="#about">&lt;About/&gt;</a></li>
                 <li><a class="nav-links" href="#projects">&lt;Projects/&gt;</a></li>
+                <li><a class="nav-links" href="#tech-stack">&lt;Tech-Stack/&gt;</a></li>
                 <li><a class="nav-links" href="#contact">&lt;Contact/&gt;</a></li>
 
                 <button class="theme-toggler">
@@ -63,8 +70,13 @@
                                 <img class="info-svg" alt="Github SVG" loading="lazy" src="./assets/svg/github.svg">
                                 <img class="info-svg" alt="External Link SVG" loading="lazy" src="./assets/svg/external-link.svg">
                             </div>
-                            <div class="project-info-stack">
-
+                            <div class="project-info-stacks">
+                                <div class="project-info-each-stack">
+                                    <span>Vue.Js</span>
+                                </div>
+                                <div class="project-info-each-stack">
+                                    <span>Tailwind</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -77,8 +89,13 @@
                                 <img class="info-svg" alt="Github SVG" loading="lazy" src="./assets/svg/github.svg">
                                 <img class="info-svg" alt="External Link SVG" loading="lazy" src="./assets/svg/external-link.svg">
                             </div>
-                            <div class="project-info-stack">
-
+                            <div class="project-info-stacks">
+                                <div class="project-info-each-stack">
+                                    <span>Vue.Js</span>
+                                </div>
+                                <div class="project-info-each-stack">
+                                    <span>Tailwind</span>                                
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -91,8 +108,13 @@
                                 <img class="info-svg" alt="Github SVG" loading="lazy" src="./assets/svg/github.svg">
                                 <img class="info-svg" alt="External Link SVG" loading="lazy" src="./assets/svg/external-link.svg">
                             </div>
-                            <div class="project-info-stack">
-                                
+                            <div class="project-info-stacks">
+                                <div class="project-info-each-stack">
+                                    <span>Vue.Js</span>
+                                </div>
+                                <div class="project-info-each-stack">
+                                    <span>Tailwind</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -101,8 +123,58 @@
         </section>
 
         <!-- Tech stack -->
+        <section id="tech-stack">
+            <div class="left-panel">
+                <div class="tech-header-con">
+                    <h1 class="tech-header">Tech Stack</h1>
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="tech-item">
+                    <i class="fa-brands fa-html5" style="color: #E34F26;"></i>
+                    <span>HTML</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fa-brands fa-css" style="color: #663398;"></i>
+                    <span>CSS</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fa-brands fa-js" style="color: #ffd600;"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fa-brands fa-vuejs" style="color: #3eb983;"></i>
+                    <span>Vue.Js</span>
+                </div>
+                <div class="tech-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+                        <path fill="#38bdf8" d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597c6.398-8.531 13.867-11.73 22.398-9.597c4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602q-9.6 12.803-22.399 9.602c-4.87-1.215-8.347-4.746-12.207-8.66c-6.27-6.367-13.53-13.738-29.394-13.738M32.004 64c-17.066 0-27.73 8.531-32 25.602Q9.603 76.799 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66c6.274 6.367 13.536 13.738 29.395 13.738c17.066 0 27.73-8.53 32-25.597q-9.6 12.797-22.399 9.597c-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64m0 0" />
+                    </svg>
+                    <span>Tailwind</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fa-brands fa-git-alt" style="color: #f05030;"></i>
+                    <span>Git</span>
+                </div>
+                <!-- <div class="tech-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+                        <path fill="#0acf83" d="M45.5 129c11.9 0 21.5-9.6 21.5-21.5V86H45.5C33.6 86 24 95.6 24 107.5S33.6 129 45.5 129m0 0" />
+                        <path fill="#a259ff" d="M24 64.5C24 52.6 33.6 43 45.5 43H67v43H45.5C33.6 86 24 76.4 24 64.5m0 0" />
+                        <path fill="#f24e1e" d="M24 21.5C24 9.6 33.6 0 45.5 0H67v43H45.5C33.6 43 24 33.4 24 21.5m0 0" />
+                        <path fill="#ff7262" d="M67 0h21.5C100.4 0 110 9.6 110 21.5S100.4 43 88.5 43H67zm0 0" />
+                        <path fill="#1abcfe" d="M110 64.5c0 11.9-9.6 21.5-21.5 21.5S67 76.4 67 64.5S76.6 43 88.5 43S110 52.6 110 64.5m0 0" />
+                    </svg>
+                    <span>Figma</span>
+                </div> -->
+            </div>
+        </section>
 
         <!-- Contact -->
+        <section id="contact">
+            <div class="contact-con">
+
+            </div>
+        </section>
 
     </main>
 
@@ -113,6 +185,7 @@
     <!-- GSAP CDN -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
 
     <!-- JS File -->
     <script src="scripts.js"></script>
