@@ -1,9 +1,53 @@
 document.addEventListener("DOMContentLoaded", () => {
     const projectsContainer = document.querySelector(".projects-con");
     const projectsSection = document.querySelector("#projects");
-
+    const themeToggler = document.querySelector("#theme-toggler");
+    const lightModeIcon = document.querySelector(".light-icon")
+    const darkModeIcon = document.querySelector(".dark-icon")
+    const themeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    let prefersDarkMode = null;
     let projectsWidth = projectsContainer.offsetWidth
     let amountToScroll = projectsWidth - window.innerWidth
+    let theme = localStorage.getItem("theme");
+
+    const disableLightMode = () => {
+        document.body.classList.remove("light-mode");
+        lightModeIcon.style.display = "block";
+        darkModeIcon.style.display = "none";
+        localStorage.setItem("theme", "dark");
+    }
+
+    const enableLightMode = () => {
+        document.body.classList.add("light-mode");
+        lightModeIcon.style.display = "none";
+        darkModeIcon.style.display = "block";
+        localStorage.setItem("theme", "light")
+    }
+
+    themeMediaQuery.addEventListener('change', (event) => {
+        if (event.matches) {
+            prefersDarkMode = true;
+            disableLightMode();
+        } else {
+            prefersDarkMode = false;
+            enableLightMode();
+        }
+    });
+
+    if (!prefersDarkMode && theme === "light") enableLightMode();
+
+    themeToggler.addEventListener("click", () => {
+        theme = localStorage.getItem("theme")
+        if (theme === "light") {
+            disableLightMode();
+        } else {
+            enableLightMode();
+        }
+    })
+
+
+    // GSAP Animations
 
     const updateScrollValues = () => {
         projectsWidth = projectsContainer.offsetWidth;

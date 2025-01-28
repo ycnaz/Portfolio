@@ -2,16 +2,13 @@
     --bg-primary: hsl(0, 0%, 5%);
     --accent: hsl(269, 100%, 50%);
     --white: hsl(0, 0%, 100%);
+    --text-color: hsl(0, 0%, 100%);
     --overlay: hsla(0, 0%, 0%, 0.5);
     --section-font-size: 4rem;
     --border-radius: 20px;
+    --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+    color-scheme: dark;
 }
-
-/* @media (prefers-color-scheme: light) {
-    :root {
-
-    }
-} */
 
 html {
     box-sizing: border-box;
@@ -36,9 +33,15 @@ body {
     overflow-wrap: break-word;
 }
 
+.light-mode {
+    --bg-primary: hsl(0, 0%, 90%);
+    --text-color: hsl(0, 0%, 0%);
+    color-scheme: light;
+}
+
 .logo {
     font-family: "Orbitron", serif;
-    color: var(--white);
+    color: var(--text-color);
     margin: 0;
     user-select: none;
     cursor: pointer;
@@ -50,6 +53,10 @@ header {
 
 img {
     font-style: italic;
+}
+
+section h1 {
+    color: var(--text-color);
 }
 
 nav {
@@ -75,7 +82,7 @@ nav ul {
     text-decoration: none;
     color: inherit;
     font-family: "Consolas", monospace;
-    color: var(--white);
+    color: var(--text-color);
     user-select: none;
 }
 
@@ -131,6 +138,7 @@ nav ul {
     height: calc(100vh - 50px);
     display: flex;
     justify-content: center;
+    color: var(--text-color);
     align-items: center;
     width: 100%;
 }
@@ -229,13 +237,15 @@ nav ul {
     object-fit: contain;
     position: relative;
     overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 .project-img {
     width: 100%;
     height: auto;
     object-fit: contain;
-    border-radius: var(--border-radius);
+    display: block;
 }
 
 .project-img-con-inner::after {
@@ -344,6 +354,7 @@ nav ul {
 
 .tech-item span {
     font-size: var(--section-font-size);
+    color: var(--text-color);
 }
 
 .tech-item i {
