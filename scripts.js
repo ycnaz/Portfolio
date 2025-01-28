@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const lightModeIcon = document.querySelector(".light-icon")
     const darkModeIcon = document.querySelector(".dark-icon")
     const themeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const scrollUpButton = document.querySelector(".scroll-up-button");
+    const heroSection = document.querySelector(".hero");
     
     let prefersDarkMode = null;
     let projectsWidth = projectsContainer.offsetWidth
@@ -46,6 +48,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > (projectsContainer.offsetWidth)) {
+            scrollUpButton.style.display = "block";
+            setTimeout(() => {
+                scrollUpButton.style.opacity = 1;
+            }, 10)
+        } else {
+            scrollUpButton.style.display = "none";
+            setTimeout(() => {
+                scrollUpButton.style.opacity = 0;
+            }, 300)
+        }
+    })
+
+    scrollUpButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    })
 
     // GSAP Animations
 
