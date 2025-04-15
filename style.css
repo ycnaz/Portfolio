@@ -6,7 +6,7 @@
     --black: hsl(0, 0%, 0%);
     --gray: hsl(0, 0%, 80%);
     --text-color: hsl(0, 0%, 100%);
-    --overlay: hsla(0, 0%, 0%, 0.7);
+    --overlay: hsla(0, 0%, 0%, 0.85);
     --section-font-size: 4rem;
     --border-radius: 20px;
     --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -31,7 +31,8 @@ html {
 
 body {
     background-color: var(--bg-primary);
-    font-family: "Orbitron", serif;
+    font-family: "Josefin Sans", serif;
+    font-optical-sizing: auto;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
@@ -61,6 +62,7 @@ img {
 
 section h1 {
     color: var(--text-color);
+    font-weight: 500;
 }
 
 nav {
@@ -195,9 +197,10 @@ nav ul {
     border-radius: 10px;
 }
 
-.hero strong {
+.hero {
     font-size: 7rem;
     line-height: 6rem;
+    font-family: 'Orbitron', sans-serif;
 }
 
 @keyframes wave {
@@ -293,7 +296,7 @@ nav ul {
 
 .project-info-links {
     position: absolute;
-    bottom: 1rem;
+    bottom: 3rem;
     right: -15rem;
     z-index: 1;
     transition: right 0.3s ease;
@@ -308,14 +311,14 @@ nav ul {
 }
 
 .project-img-con-inner:hover .project-info-links {
-    right: 1rem;
+    right: 3rem;
     transition-delay: 0.3s;
 }
 
 .project-info-con {
     position: absolute;
-    top: 2rem;
-    left: 1rem;
+    top: 4rem;
+    left: 4rem;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
@@ -323,7 +326,7 @@ nav ul {
 
 .project-info-stacks {
     position: relative;
-    left: -14rem;
+    left: -18rem;
     font-family: sans-serif;
     display: flex;
     column-gap: 1rem;
@@ -442,19 +445,19 @@ nav ul {
     width: 500px;
     height: 80%;
     display: flex;
-    align-items: end;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
 }
 
 .contact-icons-con {
     background-color: var(--white);
-    padding: 2px 1rem;
+    padding: 2px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: end;
     column-gap: 2rem;
-    margin-bottom: 1rem;
 }
 
 .contact-icons-con div {
@@ -490,4 +493,31 @@ nav ul {
 
 .contact-icons-con div:hover > .contact-icon-hover {
     scale: 1;
+}
+
+.pic-location {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    font-family: sans-serif;
+}
+
+.about-pic {
+    border-radius: 50%;
+    width: 70%;
+    aspect-ratio: 1;
+    border: 1px solid black;
+}
+
+.about-desc {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+    padding: 1rem;
 }
