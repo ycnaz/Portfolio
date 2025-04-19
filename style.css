@@ -442,7 +442,7 @@ nav ul {
 .contact-con {
     background-color: var(--accent);
     border-radius: var(--border-radius);
-    width: 500px;
+    width: 400px;
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -479,10 +479,11 @@ nav ul {
     position: absolute;
     background-color: var(--white);
     top: -50px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     min-width: max-content;
     padding: 2px 5px;
-    transform-origin: bottom;
+    transform-origin: bottom left;
     font-family: sans-serif;
     color: black;
     text-align: center;
@@ -509,6 +510,7 @@ nav ul {
     width: 70%;
     aspect-ratio: 1;
     border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .about-desc {
